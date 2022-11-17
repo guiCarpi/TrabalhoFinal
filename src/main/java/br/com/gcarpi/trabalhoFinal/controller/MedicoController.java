@@ -1,2 +1,44 @@
-package br.com.gcarpi.trabalhoFinal.controller;public class MedicoController {
+package br.com.gcarpi.trabalhoFinal.controller;
+
+import br.com.gcarpi.trabalhoFinal.model.MedicoModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+public class MedicoController {
+
+
+    @GetMapping("/{id}")
+    public Optional<MedicoModel> findById(@PathVariable("id") long id){
+        return service.findById(id);
+    }
+
+    @GetMapping
+    public List<MedicoModel> findAll(){
+        return  service.findAll();
+    }
+
+    @PostMapping
+    public MedicoModel save(@RequestBody MedicoModel model){
+        return service.save(model);
+    }
+
+    @PutMapping
+    public MedicoModel update(@RequestBody MedicoModel model){
+        return service.update(model);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") long id){
+        Optional<MedicoModel> found = service.findById(id);
+        if(found.isPresent()){
+            service.delete(id);
+            return ResponseEntity.ok().build();
+        } else {
+            return null;
+        }
+    }
 }
