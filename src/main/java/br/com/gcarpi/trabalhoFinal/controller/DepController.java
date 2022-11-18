@@ -1,6 +1,8 @@
 package br.com.gcarpi.trabalhoFinal.controller;
 
 import br.com.gcarpi.trabalhoFinal.model.DepModel;
+import br.com.gcarpi.trabalhoFinal.service.DepService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class DepController {
+
+
+    @Autowired
+    private DepService service;
+
     @GetMapping("/{id}")
     public Optional<DepModel> findById(@PathVariable("id") long id){
         return service.findById(id);

@@ -22,4 +22,25 @@ public class DepService {
         return repository.findById(id);
     }
 
+    public DepModel save(DepModel model){
+        return repository.save(model);
+    }
+
+    public DepModel update(DepModel model){
+        var found = repository.findById(model.getId());
+        if(found.isPresent()){
+            found.get().setName(model.getName());
+            return repository.save(found.get());
+        } else {
+            return null;
+        }
+    }
+
+    public void delete(long id){
+        var found = repository.findById(id);
+        if(found.isPresent()){
+            repository.delete(found.get());
+        }
+    }
+
 }

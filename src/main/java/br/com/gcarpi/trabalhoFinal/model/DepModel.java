@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "departamento")
 @AllArgsConstructor
 @NoArgsConstructor
-public class DepModel  {
+public class DepModel {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
