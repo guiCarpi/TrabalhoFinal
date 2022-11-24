@@ -10,7 +10,7 @@ import org.springframework.hateoas.RepresentationModel;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "medico")
+@Table(name = "medicos")
 @AllArgsConstructor
 @NoArgsConstructor
 public class MedicoModel extends RepresentationModel {
@@ -24,7 +24,7 @@ public class MedicoModel extends RepresentationModel {
 
     @Column(name = "name", nullable = false, length = 50)
     @Setter @Getter
-    @ApiModelProperty(notes = "The client's  full name")
+    @ApiModelProperty(notes = "O nome completo do Medico")
     private String name;
 
     @Column(nullable = false, length = 1)
@@ -32,9 +32,9 @@ public class MedicoModel extends RepresentationModel {
     @ApiModelProperty(notes = "Gender - just one character (M or F)")
     private String gender;
 
-    //..relationship with ProfessionModel
+    //..relationship
     @ManyToOne
-    @JoinColumn(name = "departamento_id")
+    @JoinColumn(name = "dep_id")
     @Setter @Getter
-    private DepModel departamento;
+    private DepModel Dep;
 }

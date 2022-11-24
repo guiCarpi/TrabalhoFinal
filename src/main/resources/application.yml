@@ -5,9 +5,9 @@ spring:
     pathmatch:
       matching-strategy: ant-path-matcher
   datasource:
-    url: jdbc:postgresql://localhost:5432/intro_spring?serverTimeZone=ADT
+    url: jdbc:postgresql://localhost:5432/TrabFinal?serverTimeZone=ADT
     username: postgres
-    password: 123
+    password: 123456
   jpa:
     hibernate:
       ddl-auto: none

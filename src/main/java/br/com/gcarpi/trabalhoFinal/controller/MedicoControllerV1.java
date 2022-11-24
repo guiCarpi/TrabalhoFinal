@@ -1,7 +1,7 @@
 package br.com.gcarpi.trabalhoFinal.controller;
 
 import br.com.gcarpi.trabalhoFinal.model.MedicoModel;
-import br.com.gcarpi.trabalhoFinal.service.MedicoService;
+import br.com.gcarpi.trabalhoFinal.service.MedicoServiceV1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-public class MedicoController {
+
+@RestController
+@RequestMapping("/medicos/v1")
+public class MedicoControllerV1 {
 
     @Autowired
-    private MedicoService service;
+    private MedicoServiceV1 service;
 
     @GetMapping("/{id}")
     public Optional<MedicoModel> findById(@PathVariable("id") long id){

@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "departamento")
+@Table(name = "dep")
 @AllArgsConstructor
 @NoArgsConstructor
 public class DepModel {

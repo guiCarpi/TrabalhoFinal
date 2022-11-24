@@ -102,7 +102,7 @@
 				<configuration>
 					<url>jdbc:postgresql://localhost:5432/TrabFinal</url>
 					<user>postgres</user>
-					<password>123</password>
+					<password>123456</password>
 					<schemas>
 						<schema>public</schema>
 					</schemas>

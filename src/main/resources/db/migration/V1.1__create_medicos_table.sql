@@ -5,7 +5,7 @@ create table if not exists medicos(
     gender char(1) not null,
     dep_id integer not null,
 
-    constraint pk_medico primary key (id),
-    constraint fk_medico_dep foreign key(dep_id) references dep(id)
+    constraint pk_medicos primary key (id),
+    constraint fk_medicos_dep foreign key(dep_id) references dep(id)
 
     );
