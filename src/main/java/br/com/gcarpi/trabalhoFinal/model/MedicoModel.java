@@ -1,10 +1,7 @@
 package br.com.gcarpi.trabalhoFinal.model;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
@@ -36,5 +33,5 @@ public class MedicoModel extends RepresentationModel {
     @ManyToOne
     @JoinColumn(name = "dep_id")
     @Setter @Getter
-    private DepModel Dep;
+    private DepModel dep;
 }

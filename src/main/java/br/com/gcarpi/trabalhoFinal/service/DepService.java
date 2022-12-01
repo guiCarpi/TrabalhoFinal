@@ -3,6 +3,8 @@ package br.com.gcarpi.trabalhoFinal.service;
 import br.com.gcarpi.trabalhoFinal.model.DepModel;
 import br.com.gcarpi.trabalhoFinal.repository.DepRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +16,8 @@ public class DepService {
     @Autowired
     private DepRepository repository;
 
-    public List<DepModel> findAll(){
-        return repository.findAll();
+    public Page<DepModel> findAll(Pageable pageable){
+        return repository.findAll(pageable);
     }
 
     public Optional<DepModel> findById(long id){

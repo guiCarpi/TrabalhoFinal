@@ -3,6 +3,8 @@ package br.com.gcarpi.trabalhoFinal.service;
 import br.com.gcarpi.trabalhoFinal.model.MedicoModel;
 import br.com.gcarpi.trabalhoFinal.repository.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +19,8 @@ public class MedicoServiceV2 {
         return repository.findById(id);
     }
 
-    public List<MedicoModel> findAll(){
-        return repository.findAll();
+    public Page<MedicoModel> findAll(Pageable pageable){
+        return repository.findAll(pageable);
     }
 
     public MedicoModel save(MedicoModel model){

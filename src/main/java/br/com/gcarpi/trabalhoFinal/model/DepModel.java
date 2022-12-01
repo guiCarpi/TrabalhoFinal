@@ -1,5 +1,6 @@
 package br.com.gcarpi.trabalhoFinal.model;
 import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "dep")
 @AllArgsConstructor
 @NoArgsConstructor
-public class DepModel {
+public class DepModel extends RepresentationModel {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)

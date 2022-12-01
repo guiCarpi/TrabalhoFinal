@@ -20,7 +20,7 @@ public class SpringFoxConfig {
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.ads.TrabalhoFinal"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.gcarpi.trabalhoFinal"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(info());

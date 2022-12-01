@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/TrabFinal?serverTimeZone=ADT
     username: postgres
-    password: 123456
+    password: postdba
   jpa:
     hibernate:
       ddl-auto: none
